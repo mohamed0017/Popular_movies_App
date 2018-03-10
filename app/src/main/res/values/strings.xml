@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">movies</string>
+    <string name="Setting">Setting</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!--  settings -->
+
+    <string name="sort">Sort By</string>
+    <string-array name="multi_select_list_preference_default_value" />
+
+    <string name="sort_title">Sort movies by</string>
+    <string name="key_sort">key sort</string>
+    <string name="summary_sort">sort </string>
+
+</resources>
