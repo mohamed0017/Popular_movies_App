@@ -1,10 +1,13 @@
 package com.movies.movies.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created by user on 3/3/2018.
  */
 
-public class results {
+public class results implements Parcelable {
 
     private int id;
     private String title;
@@ -71,4 +74,44 @@ public class results {
     }
 
 
+    public results() {
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(this.id);
+        dest.writeString(this.title);
+        dest.writeString(this.poster_path);
+        dest.writeString(this.overview);
+        dest.writeString(this.release_date);
+        dest.writeString(this.vote_average);
+        dest.writeString(this.backdrop_path);
+    }
+
+    protected results(Parcel in) {
+        this.id = in.readInt();
+        this.title = in.readString();
+        this.poster_path = in.readString();
+        this.overview = in.readString();
+        this.release_date = in.readString();
+        this.vote_average = in.readString();
+        this.backdrop_path = in.readString();
+    }
+
+    public static final Creator<results> CREATOR = new Creator<results>() {
+        @Override
+        public results createFromParcel(Parcel source) {
+            return new results(source);
+        }
+
+        @Override
+        public results[] newArray(int size) {
+            return new results[size];
+        }
+    };
 }

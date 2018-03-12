@@ -3,6 +3,7 @@ package com.movies.movies.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -10,21 +11,6 @@ import java.util.List;
  */
 
 public class movie implements Parcelable {
-
-    protected movie(Parcel in) {
-    }
-
-    public static final Creator<movie> CREATOR = new Creator<movie>() {
-        @Override
-        public movie createFromParcel(Parcel in) {
-            return new movie(in);
-        }
-
-        @Override
-        public movie[] newArray(int size) {
-            return new movie[size];
-        }
-    };
 
     public List<results> getResults() {
         return results;
@@ -42,6 +28,27 @@ public class movie implements Parcelable {
     }
 
     @Override
-    public void writeToParcel(Parcel parcel, int i) {
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeList(this.results);
     }
+
+    public movie() {
+    }
+
+    protected movie(Parcel in) {
+        this.results = new ArrayList<com.movies.movies.model.results>();
+        in.readList(this.results, com.movies.movies.model.results.class.getClassLoader());
+    }
+
+    public static final Parcelable.Creator<movie> CREATOR = new Parcelable.Creator<movie>() {
+        @Override
+        public movie createFromParcel(Parcel source) {
+            return new movie(source);
+        }
+
+        @Override
+        public movie[] newArray(int size) {
+            return new movie[size];
+        }
+    };
 }

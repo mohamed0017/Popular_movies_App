@@ -11,7 +11,7 @@ import retrofit2.http.GET;
 
 public interface api_inerface {
 
-    String Api_key = "*********";  // Enter your Api_key
+    String Api_key = "d06277cedd76c9b43c7264b803e1fa64";  // Enter your Api_key
     String BasicUrl = "api.themoviedb.org";
 
     @GET("/3/movie/popular")
