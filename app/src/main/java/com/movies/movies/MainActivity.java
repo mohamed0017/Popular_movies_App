@@ -2,6 +2,7 @@ package com.movies.movies;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,10 +12,12 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+
 import com.movies.movies.adapters.PostersMoviesAdapter;
 import com.movies.movies.api.FullRestAdapter;
 import com.movies.movies.api.api_inerface;
 import com.movies.movies.model.movie;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -65,8 +68,15 @@ public class MainActivity extends AppCompatActivity {
         String string = prefs.getString("movieSort", "default_value");
 
         if (string.equals("Popular")) {
-            String url = api_inerface.BasicUrl + "/3/movie/popular/";
-            api_inerface api = FullRestAdapter.createAPI(url);
+
+            Uri.Builder builder = new Uri.Builder();
+            builder.scheme("https")
+                    .authority(api_inerface.BasicUrl)
+                    .appendPath("3")
+                    .appendPath("movie")
+                    .appendPath("popular");
+            String FinalUrl = builder.build().toString();
+            api_inerface api = FullRestAdapter.createAPI(FinalUrl + "/");
             Call<movie> resultsCall = api.GetPopular();
             resultsCall.enqueue(new Callback<movie>() {
                 @Override
@@ -89,8 +99,16 @@ public class MainActivity extends AppCompatActivity {
             });
 
         } else {
-            String url = api_inerface.BasicUrl + "/3/movie/top_rated/";
-            api_inerface api = FullRestAdapter.createAPI(url);
+
+            Uri.Builder builder = new Uri.Builder();
+            builder.scheme("https")
+                    .authority(api_inerface.BasicUrl)
+                    .appendPath("3")
+                    .appendPath("movie")
+                    .appendPath("top_rated");
+            String FinalUrl = builder.build().toString();
+
+            api_inerface api = FullRestAdapter.createAPI(FinalUrl + "/");
             Call<movie> resultsCall = api.Gettop_rated();
             resultsCall.enqueue(new Callback<movie>() {
                 @Override

@@ -11,5 +11,9 @@
     <string name="sort_title">Sort movies by</string>
     <string name="key_sort">key sort</string>
     <string name="summary_sort">sort </string>
+    <string name="rate">6.7</string>
+    <string name="description">description</string>
+    <string name="releaseData">release data</string>
+    <string name="MoveTitle">Move title</string>
 
 </resources>

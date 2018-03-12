@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="ImgHeight">250dp</dimen>
+    <dimen name="paddingLinear">8dp</dimen>
+    <dimen name="ImgPosterWidth">98dp</dimen>
+    <dimen name="ImgPosterHeight">145dp</dimen>
+    <dimen name="RatingDimens">30dp</dimen>
+    <dimen name="paddingRating">15dp</dimen>
+    <dimen name="textDes">20sp</dimen>
+</resources>

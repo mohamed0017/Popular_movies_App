@@ -3,7 +3,6 @@ package com.movies.movies.api;
 import com.movies.movies.model.movie;
 
 import retrofit2.Call;
-import retrofit2.http.Body;
 import retrofit2.http.GET;
 
 /**
@@ -12,8 +11,8 @@ import retrofit2.http.GET;
 
 public interface api_inerface {
 
-    String Api_key = "***************************";  // Enter your Api_key
-    String BasicUrl = "https://api.themoviedb.org/3/movie/";
+    String Api_key = "*********";  // Enter your Api_key
+    String BasicUrl = "api.themoviedb.org";
 
     @GET("/3/movie/popular")
     Call<movie> GetPopular();

@@ -47,7 +47,9 @@ public class PostersMoviesAdapter extends RecyclerView.Adapter<PostersMoviesAdap
 
         final results movies = moviesList.get(position);
 
-        Picasso.with(context).load("http://image.tmdb.org/t/p/w500" + movies.getPoster_path()).into(holder.imageView_poster);
+        Picasso.with(context).load("http://image.tmdb.org/t/p/w500" + movies.getPoster_path())
+                .placeholder(R.drawable.placeholder)
+                .error(R.drawable.placeholder).into(holder.imageView_poster);
 
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
