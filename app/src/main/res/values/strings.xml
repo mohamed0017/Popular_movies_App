@@ -15,5 +15,13 @@
     <string name="description">description</string>
     <string name="releaseData">release data</string>
     <string name="MoveTitle">Move title</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="poupler">poupler</string>
+    <string name="top_rate">Top Rate</string>
+    <string name="pouplar">pouplar</string>
+    <string name="popular">popular</string>
 
 </resources>
